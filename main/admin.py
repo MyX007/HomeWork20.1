@@ -5,13 +5,13 @@ from main.models import Category, Product
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'category_name')
+    list_display = ('pk', 'name')
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'product_name', 'product_category', 'product_price')
-    list_filter = ('product_category', 'product_name')
-    search_fields = ('product_name', 'product_description')
+    list_display = ('pk', 'name', 'category', 'price')
+    list_filter = ('category', 'name')
+    search_fields = ('name', 'description')
 
 
